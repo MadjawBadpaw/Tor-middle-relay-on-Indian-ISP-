@@ -1,8 +1,8 @@
 # Tor-middle-relay-on-Indian-ISP
-# Tor Relay on Home Internet (india)
-# IPv6 Works, IPv4 Fails - A Practical Case Study with Jio Fiber
-# Not under CGNAT
-# Not exit node, only middle relay
+## Tor Relay on Home Internet (india)
+## IPv6 Works, IPv4 Fails - A Practical Case Study with Jio Fiber
+## Not under CGNAT
+## Not exit node, only middle relay
 
 Tor relay can run and pass self-tests over IPv6
 
@@ -35,7 +35,7 @@ Public IPv4: 67.68.x.x, 152.58.x.x (confirmed, not CGNAT)
 
 Global IPv6: 2409:40d7:1069:...
 
-ISP: Jio Fiber (India)
+## ISP: Jio Fiber (India)
 
 # 2. Tor Configuration (torrc)
 
@@ -75,9 +75,9 @@ LISTEN 0 4096 [::]:443
 
 So:
 
-Tor is bound to IPv4 ✅
+Tor is bound to IPv4 
 
-Tor is bound to IPv6 ✅
+Tor is bound to IPv6 
 
 No local firewall issue 
 
@@ -122,12 +122,12 @@ Inbound IPv4 traffic for tor never reaches the host
 This is not a Tor issue and not a Linux firewall issue.
 
 
-# 6. Is the Relay “Working”?
-Tor daemon = running	✅
+# 6. Is the Relay working 
+Tor daemon = running	
 Bootstrap	= 100%
-IPv6 ORPort = reachable	✅
-IPv4 ORPort = reachable	❌
-Fully usable relay = NO	❌ (per current Tor relay requirements)
+IPv6 ORPort = reachable	
+IPv4 ORPort = reachable	
+Fully usable relay = Nope as per current Tor relay requirements
 
 # Conclusion:
 Tor is running correctly, but the relay is not fully usable because IPv4 inbound connectivity doesn't work.
