@@ -2,7 +2,7 @@
 # Tor Relay on Home Internet (India)
 # IPv6 Works, IPv4 Fails — A Practical Case Study with Jio Fiber
 # Not under CGNAT
-# TL;DR
+# Not exit node, only middle relay
 
 Tor relay can run and pass self-tests over IPv6
 
