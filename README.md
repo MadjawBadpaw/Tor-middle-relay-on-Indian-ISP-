@@ -1,7 +1,7 @@
 # Tor-middle-relay-on-Indian-ISP
 # Tor Relay on Home Internet (India)
 # IPv6 Works, IPv4 Fails — A Practical Case Study with Jio Fiber
-
+# Not under CGNAT
 # TL;DR
 
 Tor relay can run and pass self-tests over IPv6
@@ -12,9 +12,10 @@ Jio Fiber router does not support real port forwarding, only predefined services
 
 # Result: IPv6-only reachability confirmed, IPv4 blocked upstream
 
-# NO CGNAT
+## NO CGNAT
+## Control port 9051. Nyx is used for monitoring.
 
-## This repository documents the exact torrc setup, reachability tests, and the root cause.
+# This repository documents the exact torrc setup, reachability tests, and the root cause.
 
 # 1. System Setup
 
@@ -78,7 +79,7 @@ Tor is bound to IPv4 ✅
 
 Tor is bound to IPv6 ✅
 
-No local firewall issue ❌
+No local firewall issue 
 
 # 4. Tor Self-Test Results (Logs)
 
@@ -96,7 +97,7 @@ IPv6 confirmed reachable by directory authorities
 
 IPv4 never confirmed, despite public IPv4 and correct torrc
 
-# 5. Root Cause: Jio Fiber Router Port Forwarding Jio Router Behavior
+# 5. ROOT CAUSE: Jio Fiber Router Port Forwarding 
 
 The Jio Fiber router UI only allows:
 
@@ -108,24 +109,25 @@ HTTPS (443)
 
 FTP, DNS, etc.
 
+No true TCP usage on custom ports only predefiined service.
+
 No true NAT port mapping
 
 “HTTPS Allow” does not forward arbitrary TCP traffic
 
 ## This means:
 
-Inbound IPv4 traffic never reaches the host
+Inbound IPv4 traffic for tor never reaches the host
 
 This is not a Tor issue and not a Linux firewall issue.
 
 
 # 6. Is the Relay “Working”?
-Aspect	Status
-Tor daemon running	✅
-Bootstrap	✅ 100%
-IPv6 ORPort reachable	✅
-IPv4 ORPort reachable	❌
-Fully usable relay	❌ (per current Tor relay requirements)
+Tor daemon = running	✅
+Bootstrap	= 100%
+IPv6 ORPort = reachable	✅
+IPv4 ORPort = reachable	❌
+Fully usable relay = NO	❌ (per current Tor relay requirements)
 
 # Conclusion:
 Tor is running correctly, but the relay is not fully usable because IPv4 inbound connectivity doesn't work.
