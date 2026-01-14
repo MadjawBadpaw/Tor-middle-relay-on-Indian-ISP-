@@ -1,6 +1,6 @@
 # Tor-middle-relay-on-Indian-ISP
-# Tor Relay on Home Internet (India)
-# IPv6 Works, IPv4 Fails — A Practical Case Study with Jio Fiber
+# Tor Relay on Home Internet (india)
+# IPv6 Works, IPv4 Fails - A Practical Case Study with Jio Fiber
 # Not under CGNAT
 # Not exit node, only middle relay
 
@@ -61,7 +61,7 @@ Port 443 used to bypass common ISP filtering
 
 Exit relay disabled (middle/guard only)
 
-Accounting enabled → directory service intentionally disabled
+Accounting enabled -> directory service intentionally disabled
 
 # 3. Verification: Tor Is Listening Correctly
 ss -tulpen | grep 443
