@@ -18,7 +18,7 @@ Jio Fiber router does not support real port forwarding, only predefined services
 
 # 1. System Setup
 
-OS: Debian GNU/Linux
+OS: Debian / Parrot
 
 Tor version: system package (tor@default.service
 )
