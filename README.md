@@ -12,7 +12,7 @@ Jio Fiber router does not support real port forwarding, only predefined services
 
 # Result: IPv6-only reachability confirmed, IPv4 blocked upstream
 
-
+# NO CGNAT
 
 ## This repository documents the exact torrc setup, reachability tests, and the root cause.
 
@@ -23,12 +23,14 @@ OS: Debian / Parrot
 Tor version: system package (tor@default.service
 )
 
-Network:
+# Network:
 
 curl -4 ifconfig.me  ----> Gives public IPv4
 Double check from internet.
 
-Public IPv4: 67.68.x.x, 152.58.x.x (confirmed, not CGNAT)
+Public IPv4: 67.68.x.x, 152.58.x.x (confirmed, not CGNAT) 
+### CGNAT range is 100.64.0.0/10 
+### 100.64.0.0 – 100.127.255.255
 
 Global IPv6: 2409:40d7:1069:...
 
